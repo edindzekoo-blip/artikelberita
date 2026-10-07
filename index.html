@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Berita Hari Ini</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            color: #222;
+        }
+
+        header {
+            background-color: #d90429;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            font-size: 35px;
+        }
+
+        header p {
+            margin-top: 8px;
+        }
+
+        nav {
+            background-color: #a90320;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd6d6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        article {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        /* GAMBAR UTAMA */
+        .gambar-berita {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 15px 0 20px;
+        }
+
+        .kategori {
+            color: #d90429;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        article h2 {
+            font-size: 30px;
+            margin-top: 8px;
+        }
+
+        .tanggal {
+            color: #777;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        article p {
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        aside {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        aside h3 {
+            color: #d90429;
+            border-bottom: 3px solid #d90429;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .berita-lain {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .berita-lain h4 {
+            margin-bottom: 7px;
+        }
+
+        .berita-lain p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            article h2 {
+                font-size: 24px;
+            }
+
+            .gambar-berita {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>BERITA KITA</h1>
+        <p>Berita Terbaru dan Terpercaya</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Nasional</a>
+        <a href="#">Pendidikan</a>
+        <a href="#">Teknologi</a>
+        <a href="#">Olahraga</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- ARTIKEL UTAMA -->
+        <article>
+
+            <div class="kategori">PENDIDIKAN</div>
+
+            <h2>
+                Semangat Pelajar Indonesia dalam Mengembangkan Teknologi
+            </h2>
+
+            <div class="tanggal">
+                Rabu, 7 Oktober 2026 | 07.30 WIB
+            </div>
+
+            <!-- GAMBAR BERITA -->
+            <img
+                class="gambar-berita"
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1"
+                alt="Pelajar sedang belajar">
+
+            <p>
+                Perkembangan teknologi memberikan banyak manfaat bagi dunia
+                pendidikan. Para pelajar kini dapat memanfaatkan teknologi
+                sebagai sarana untuk belajar dan mengembangkan kreativitas.
+            </p>
+
+            <p>
+                Dengan adanya internet, pelajar dapat memperoleh berbagai
+                informasi dengan lebih mudah. Pembelajaran juga dapat dilakukan
+                melalui berbagai media digital yang menarik.
+            </p>
+
+            <p>
+                Namun, penggunaan teknologi harus dilakukan secara bijak.
+                Pelajar perlu menggunakan internet untuk kegiatan yang positif
+                serta tetap menjaga etika dalam menggunakan media digital.
+            </p>
+
+            <p>
+                Oleh karena itu, kemampuan menggunakan teknologi dengan baik
+                menjadi salah satu keterampilan penting bagi generasi muda
+                untuk menghadapi masa depan.
+            </p>
+
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside>
+
+            <h3>Berita Terbaru</h3>
+
+            <div class="berita-lain">
+                <h4>Perkembangan Teknologi Semakin Pesat</h4>
+                <p>
+                    Teknologi terus berkembang dan memberikan banyak perubahan
+                    dalam kehidupan.
+                </p>
+            </div>
+
+            <div class="berita-lain">
+                <h4>Pelajar Berprestasi Raih Penghargaan</h4>
+                <p>
+                    Prestasi membanggakan berhasil diraih oleh pelajar Indonesia.
+                </p>
+            </div>
+
+            <div class="berita-lain">
+                <h4>Olahraga Indonesia Semakin Maju</h4>
+                <p>
+                    Atlet muda Indonesia terus menunjukkan prestasi.
+                </p>
+            </div>
+
+            <div class="berita-lain">
+                <h4>Sekolah Mulai Memanfaatkan Teknologi</h4>
+                <p>
+                    Pembelajaran digital semakin banyak digunakan di sekolah.
+                </p>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Berita Kita | Dibuat untuk tugas sekolah</p>
+    </footer>
+
+</body>
+</html>
