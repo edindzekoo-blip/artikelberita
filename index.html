@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Berita Hari Ini</title>
+    <title>BeritaKita - Portal Berita Indonesia</title>
 
     <style>
         * {
@@ -14,147 +14,194 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
             color: #222;
         }
 
+        /* HEADER */
         header {
-            background-color: #d90429;
-            color: white;
-            text-align: center;
-            padding: 25px;
+            background: white;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        header h1 {
-            font-size: 35px;
+        .top-header {
+            max-width: 1100px;
+            margin: auto;
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
         }
 
-        header p {
-            margin-top: 8px;
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: #e21b23;
         }
 
+        .logo span {
+            color: #222;
+        }
+
+        .search {
+            padding: 10px 15px;
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        /* NAVBAR */
         nav {
-            background-color: #a90320;
-            text-align: center;
-            padding: 15px;
+            background: #e21b23;
         }
 
-        nav a {
+        .nav-menu {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            overflow-x: auto;
+        }
+
+        .nav-menu a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            padding: 15px 20px;
             font-weight: bold;
+            white-space: nowrap;
         }
 
-        nav a:hover {
-            color: #ffd6d6;
+        .nav-menu a:hover {
+            background: #b9151c;
         }
 
+        /* CONTAINER */
         .container {
-            width: 90%;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 30px auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 25px;
+            padding: 0 20px;
         }
 
+        /* BREADCRUMB */
+        .breadcrumb {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* ARTIKEL */
         article {
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        /* GAMBAR UTAMA */
-        .gambar-berita {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin: 15px 0 20px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .kategori {
-            color: #d90429;
+            color: #e21b23;
             font-weight: bold;
             font-size: 14px;
-        }
-
-        article h2 {
-            font-size: 30px;
-            margin-top: 8px;
-        }
-
-        .tanggal {
-            color: #777;
-            margin-top: 10px;
             margin-bottom: 10px;
-            font-size: 14px;
         }
 
-        article p {
-            line-height: 1.8;
-            text-align: justify;
+        h1 {
+            font-size: 36px;
+            line-height: 1.2;
             margin-bottom: 15px;
         }
 
-        aside {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            height: fit-content;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        aside h3 {
-            color: #d90429;
-            border-bottom: 3px solid #d90429;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-
-        .berita-lain {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-        }
-
-        .berita-lain h4 {
-            margin-bottom: 7px;
-        }
-
-        .berita-lain p {
+        .info {
             color: #777;
-            font-size: 13px;
+            font-size: 14px;
+            margin-bottom: 25px;
         }
 
+        /* GAMBAR */
+        .gambar-utama {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .caption {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        /* ISI BERITA */
+        .isi {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .isi p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .isi strong {
+            color: #333;
+        }
+
+        .quote {
+            border-left: 5px solid #e21b23;
+            padding: 15px 20px;
+            background: #f8f8f8;
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        /* FOOTER */
         footer {
-            background-color: #222;
+            background: #222;
             color: white;
+            margin-top: 40px;
+            padding: 30px;
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
+        }
+
+        footer p {
+            color: #ccc;
+            margin-top: 10px;
         }
 
         /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
+        @media (max-width: 700px) {
+
+            .top-header {
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+                flex-direction: column;
             }
 
-            nav a {
-                display: inline-block;
-                margin: 5px;
+            .search {
+                width: 100%;
             }
 
-            article h2 {
-                font-size: 24px;
+            h1 {
+                font-size: 27px;
             }
 
-            .gambar-berita {
+            article {
+                padding: 20px;
+            }
+
+            .gambar-utama {
                 height: 250px;
+            }
+
+            .isi p {
+                font-size: 16px;
             }
         }
     </style>
@@ -162,106 +209,150 @@
 
 <body>
 
+    <!-- HEADER -->
     <header>
-        <h1>BERITA KITA</h1>
-        <p>Berita Terbaru dan Terpercaya</p>
-    </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Nasional</a>
-        <a href="#">Pendidikan</a>
-        <a href="#">Teknologi</a>
-        <a href="#">Olahraga</a>
-    </nav>
+        <div class="top-header">
 
-    <div class="container">
-
-        <!-- ARTIKEL UTAMA -->
-        <article>
-
-            <div class="kategori">PENDIDIKAN</div>
-
-            <h2>
-                Semangat Pelajar Indonesia dalam Mengembangkan Teknologi
-            </h2>
-
-            <div class="tanggal">
-                Rabu, 7 Oktober 2026 | 07.30 WIB
+            <div class="logo">
+                Berita<span>Kita</span>
             </div>
 
-            <!-- GAMBAR BERITA -->
+            <input
+                type="text"
+                class="search"
+                placeholder="Cari berita..."
+            >
+
+        </div>
+
+        <!-- MENU -->
+        <nav>
+            <div class="nav-menu">
+
+                <a href="#">Home</a>
+                <a href="#">Nasional</a>
+                <a href="#">Pendidikan</a>
+                <a href="#">Teknologi</a>
+                <a href="#">Olahraga</a>
+
+            </div>
+        </nav>
+
+    </header>
+
+
+    <!-- KONTEN -->
+    <main class="container">
+
+        <div class="breadcrumb">
+            Home / Nasional / Pendidikan
+        </div>
+
+
+        <article>
+
+            <div class="kategori">
+                NASIONAL
+            </div>
+
+
+            <h1>
+                Penyaluran Dana BOS dan PIP Didorong Semakin Transparan
+            </h1>
+
+
+            <div class="info">
+                BeritaKita &nbsp; | &nbsp;
+                6 Oktober 2026, 10.30 WIB
+            </div>
+
+
+            <!-- GAMBAR -->
             <img
-                class="gambar-berita"
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1"
-                alt="Pelajar sedang belajar">
+                class="gambar-utama"
+                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80"
+                alt="Ilustrasi kegiatan pendidikan"
+            >
 
-            <p>
-                Perkembangan teknologi memberikan banyak manfaat bagi dunia
-                pendidikan. Para pelajar kini dapat memanfaatkan teknologi
-                sebagai sarana untuk belajar dan mengembangkan kreativitas.
-            </p>
+            <div class="caption">
+                Ilustrasi kegiatan pendidikan dan bantuan untuk siswa.
+            </div>
 
-            <p>
-                Dengan adanya internet, pelajar dapat memperoleh berbagai
-                informasi dengan lebih mudah. Pembelajaran juga dapat dilakukan
-                melalui berbagai media digital yang menarik.
-            </p>
 
-            <p>
-                Namun, penggunaan teknologi harus dilakukan secara bijak.
-                Pelajar perlu menggunakan internet untuk kegiatan yang positif
-                serta tetap menjaga etika dalam menggunakan media digital.
-            </p>
+            <!-- ISI -->
+            <div class="isi">
 
-            <p>
-                Oleh karena itu, kemampuan menggunakan teknologi dengan baik
-                menjadi salah satu keterampilan penting bagi generasi muda
-                untuk menghadapi masa depan.
-            </p>
+                <p>
+                    Pemerintah terus mendorong agar penyaluran bantuan
+                    pendidikan kepada sekolah dan siswa dapat dilakukan
+                    secara lebih transparan. Upaya tersebut mencakup
+                    penyaluran dana Bantuan Operasional Sekolah (BOS)
+                    dan Program Indonesia Pintar (PIP).
+                </p>
+
+
+                <p>
+                    Transparansi menjadi salah satu hal penting dalam
+                    pengelolaan bantuan pendidikan. Dengan informasi
+                    yang lebih terbuka, sekolah, siswa, dan orang tua
+                    dapat mengetahui proses serta penggunaan bantuan
+                    dengan lebih jelas.
+                </p>
+
+
+                <div class="quote">
+                    Pengelolaan dana pendidikan yang transparan
+                    diharapkan dapat membuat bantuan benar-benar
+                    diterima oleh pihak yang membutuhkan.
+                </div>
+
+
+                <p>
+                    Dana BOS digunakan untuk mendukung berbagai
+                    kebutuhan operasional sekolah. Sementara itu,
+                    PIP ditujukan untuk membantu siswa dari keluarga
+                    yang membutuhkan agar dapat tetap memperoleh
+                    akses pendidikan.
+                </p>
+
+
+                <p>
+                    Pemerintah berharap sistem penyaluran yang semakin
+                    terbuka dapat mengurangi kesalahan dalam distribusi
+                    bantuan. Pengawasan dari berbagai pihak juga
+                    diperlukan agar program pendidikan berjalan sesuai
+                    dengan tujuan.
+                </p>
+
+
+                <p>
+                    Bagi masyarakat, keterbukaan informasi menjadi
+                    bagian penting untuk memastikan bantuan pendidikan
+                    dapat digunakan secara tepat dan memberikan manfaat
+                    bagi siswa.
+                </p>
+
+            </div>
 
         </article>
 
-        <!-- SIDEBAR -->
-        <aside>
+    </main>
 
-            <h3>Berita Terbaru</h3>
 
-            <div class="berita-lain">
-                <h4>Perkembangan Teknologi Semakin Pesat</h4>
-                <p>
-                    Teknologi terus berkembang dan memberikan banyak perubahan
-                    dalam kehidupan.
-                </p>
-            </div>
-
-            <div class="berita-lain">
-                <h4>Pelajar Berprestasi Raih Penghargaan</h4>
-                <p>
-                    Prestasi membanggakan berhasil diraih oleh pelajar Indonesia.
-                </p>
-            </div>
-
-            <div class="berita-lain">
-                <h4>Olahraga Indonesia Semakin Maju</h4>
-                <p>
-                    Atlet muda Indonesia terus menunjukkan prestasi.
-                </p>
-            </div>
-
-            <div class="berita-lain">
-                <h4>Sekolah Mulai Memanfaatkan Teknologi</h4>
-                <p>
-                    Pembelajaran digital semakin banyak digunakan di sekolah.
-                </p>
-            </div>
-
-        </aside>
-
-    </div>
-
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Berita Kita | Dibuat untuk tugas sekolah</p>
+
+        <h3>BeritaKita</h3>
+
+        <p>
+            Portal berita sederhana untuk tugas pembelajaran HTML dan CSS.
+        </p>
+
+        <p>
+            © 2026 BeritaKita
+        </p>
+
     </footer>
 
 </body>
